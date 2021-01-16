@@ -3,7 +3,7 @@ from gensim import corpora, models
 import spacy
 
 
-pdf = pdfplumber.open('../data/text.pdf')
+pdf = pdfplumber.open('../../data/text.pdf')
 nlp = spacy.load('en_core_web_sm')
 all_texts = []
 

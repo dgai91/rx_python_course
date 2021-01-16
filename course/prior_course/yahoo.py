@@ -18,7 +18,7 @@ tickers = ['AAPL', 'BABA', 'IBM', 'MSFT', 'GOOGL', 'GME']
 # price.to_csv('../data/all_data.csv')
 # ff_factors.to_csv('../data/ff_factors.csv')
 
-price = pd.read_csv('../data/all_data.csv')
+price = pd.read_csv('../../data/all_data.csv')
 price.index = [dtm.datetime.strptime(str(x), "%Y-%m-%d") for x in price.iloc[:, 0]]
 price = price.iloc[:, 1:]
 log_prices = []
@@ -27,7 +27,7 @@ for ticker in tickers:
 df = pd.concat(log_prices, axis=1).dropna()
 df.columns = tickers
 
-ff_factors = pd.read_csv('../data/ff_factors.csv')
+ff_factors = pd.read_csv('../../data/ff_factors.csv')
 ff_factors.index = [dtm.datetime.strptime(str(x), "%Y-%m-%d") for x in ff_factors.iloc[:, 0]]
 ff_factors = ff_factors.iloc[:, 1:]
 ff_factors = ff_factors.rename(columns={'Mkt-RF': 'MKT'})
